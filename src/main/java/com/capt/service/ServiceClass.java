@@ -2,7 +2,7 @@ package com.capt.service;
 import java.util.Scanner;
 import com.capt.bean.Person;
 import com.capt.dao.DAOClass;
-public class ServiceClass implements ServiceInterface   
+public class ServiceClass implements ServiceInterface, Validations
 {
 	DAOClass d = new DAOClass();
 	Scanner sc = new Scanner(System.in);
@@ -15,9 +15,23 @@ public class ServiceClass implements ServiceInterface
 		p.setAccountNumber(sc.next());
 		System.out.println("Enter Accountee's New Name");
 		p.setNewName(sc.next());
-		if(d.updateAccounteeName(p.getAccountNumber(),p.getNewName()))
+		if(Validations.validatedata(p.getAccountNumber(), Validations.accountNumber))
 		{
-			System.out.println("Name is Updated...");
+			if(Validations.validatedata(p.getNewName(), Validations.newNameValidator))
+			{
+				if(d.updateAccounteeName(p.getAccountNumber(),p.getNewName()))
+				{
+					System.out.println("Name is Updated...");
+				}
+			}
+			else
+			{
+				System.out.println("Name should be in alphabets only.");
+			}
+		}
+		else
+		{
+			System.out.println("Account Number should be valid(a 12 digit number).");
 		}
 	}
 	@Override
@@ -27,9 +41,23 @@ public class ServiceClass implements ServiceInterface
 		p.setAccountNumber(sc.next());
 		System.out.println("Enter the new Contact Number");
 		p.setNewNum(sc.next());
-		if(d.updateAccounteeContact(p.getAccountNumber(), p.getNewNum()))
+		if(Validations.validatedata(p.getAccountNumber(), Validations.accountNumber))
 		{
-			System.out.println("Contact Number is Updated...");
+			if(Validations.validatedata(p.getNewNum(), Validations.newContactNoValidator))
+			{
+				if(d.updateAccounteeContact(p.getAccountNumber(), p.getNewNum()))
+				{
+					System.out.println("Contact Number is Updated...");
+				}
+			}
+			else
+			{
+				System.out.println("Contact Number should be Valid.");
+			}
+		}
+		else
+		{
+			System.out.println("Account Number should be valid(a 12 digit number).");
 		}
 	}
 	@Override
@@ -39,9 +67,23 @@ public class ServiceClass implements ServiceInterface
 		p.setAccountNumber(sc.next());
 		System.out.println("Enter the New Address");
 		p.setNewAddress(sc.next());
-		if(d.updateAccounteeAddress(p.getAccountNumber(), p.getNewAddress()))
+		if(Validations.validatedata(p.getAccountNumber(), Validations.accountNumber))
 		{
-			System.out.println("Address is Updated...");
+			if(Validations.validatedata(p.getNewAddress(), Validations.newAddressValidator))
+			{
+				if(d.updateAccounteeAddress(p.getAccountNumber(), p.getNewAddress()))
+				{
+					System.out.println("Address is Updated...");
+				}
+			}
+			else
+			{
+				System.out.println("Address should be Valid.");
+			}
+		}
+		else
+		{
+			System.out.println("Account Number should be valid(a 12 digit number).");
 		}
 	}
 	@Override
