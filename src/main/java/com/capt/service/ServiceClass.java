@@ -15,7 +15,10 @@ public class ServiceClass implements ServiceInterface
 		p.setAccountNumber(sc.next());
 		System.out.println("Enter Accountee's New Name");
 		p.setNewName(sc.next());
-		d.updateAccounteeName(p.getAccountNumber(),p.getNewName());
+		if(d.updateAccounteeName(p.getAccountNumber(),p.getNewName()))
+		{
+			System.out.println("Name is Updated...");
+		}
 	}
 	@Override
 	public void updateContact()
@@ -24,7 +27,10 @@ public class ServiceClass implements ServiceInterface
 		p.setAccountNumber(sc.next());
 		System.out.println("Enter the new Contact Number");
 		p.setNewNum(sc.next());
-		d.updateAccounteeContact(p.getAccountNumber(), p.getNewNum());
+		if(d.updateAccounteeContact(p.getAccountNumber(), p.getNewNum()))
+		{
+			System.out.println("Contact Number is Updated...");
+		}
 	}
 	@Override
 	public void updateAddress()
@@ -33,7 +39,10 @@ public class ServiceClass implements ServiceInterface
 		p.setAccountNumber(sc.next());
 		System.out.println("Enter the New Address");
 		p.setNewAddress(sc.next());
-		d.updateAccounteeAddress(p.getAccountNumber(), p.getNewAddress());
+		if(d.updateAccounteeAddress(p.getAccountNumber(), p.getNewAddress()))
+		{
+			System.out.println("Address is Updated...");
+		}
 	}
 	@Override
 	public void showAllData()

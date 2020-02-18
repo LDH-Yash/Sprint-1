@@ -8,6 +8,7 @@ public class Person
 	private String pan;
 	private long dob;
 	private boolean gendermale;	
+	
 	private String accountNumber;
 	private String newName;
 	private String newNum;

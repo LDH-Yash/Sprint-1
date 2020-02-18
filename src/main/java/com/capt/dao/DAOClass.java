@@ -10,7 +10,7 @@ public class DAOClass implements DAOInterface
 	DummyData d = new DummyData();
 	String message = "ID Found";
 	@Override
-	public void updateAccounteeName(String accountId, String name) 
+	public boolean updateAccounteeName(String accountId, String name) 
 	{
 		try 
 		{
@@ -18,7 +18,7 @@ public class DAOClass implements DAOInterface
 			{
 				System.out.println(message);
 				d.getHashMap().get(accountId).setName(name);
-				System.out.println("Name is Updated...");
+				return true;
 			}
 			else
 			{
@@ -28,10 +28,11 @@ public class DAOClass implements DAOInterface
 		catch (IDNotFound e) 
 		{
 			System.out.println(e);
+			return false;
 		}
 	}
 	@Override
-	public void updateAccounteeContact(String accountId,String contactNo) 
+	public boolean updateAccounteeContact(String accountId,String contactNo) 
 	{
 		try 
 		{
@@ -39,7 +40,7 @@ public class DAOClass implements DAOInterface
 			{
 				System.out.println(message);
 				d.getHashMap().get(accountId).setContact(Long.parseLong(contactNo));
-				System.out.println("Contact Number is Updated...");
+				return true;
 			}
 			else
 			{
@@ -49,10 +50,11 @@ public class DAOClass implements DAOInterface
 		catch (IDNotFound e) 
 		{
 			System.out.println(e);
+			return false;
 		}
 	}
 	@Override
-	public void updateAccounteeAddress(String accountId, String address) 
+	public boolean updateAccounteeAddress(String accountId, String address) 
 	{
 		try 
 		{
@@ -60,7 +62,7 @@ public class DAOClass implements DAOInterface
 			{
 				System.out.println(message);
 				d.getHashMap().get(accountId).setAddress(address);
-				System.out.println("Address is Updated...");
+				return true;
 			}
 			else
 			{
@@ -70,6 +72,7 @@ public class DAOClass implements DAOInterface
 		catch (IDNotFound e) 
 		{
 			System.out.println(e);
+			return false;
 		}
 	}
 	@Override
