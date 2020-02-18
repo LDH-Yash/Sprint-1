@@ -8,20 +8,21 @@ public class DAOClass implements DAOInterface
 {
 	Scanner sc = new Scanner(System.in);
 	DummyData d = new DummyData();
+	String message = "ID Found";
 	@Override
-	public void updateAccounteeName(String a_Id, String name) 
+	public void updateAccounteeName(String accountId, String name) 
 	{
 		try 
 		{
-			if(d.getHashMap().containsKey(a_Id))
+			if(d.getHashMap().containsKey(accountId))
 			{
-				System.out.println("ID Found");
-				d.getHashMap().get(a_Id).setName(name);
+				System.out.println(message);
+				d.getHashMap().get(accountId).setName(name);
 				System.out.println("Name is Updated...");
 			}
 			else
 			{
-				throw new IDNotFound(a_Id);
+				throw new IDNotFound();
 			}
 		} 
 		catch (IDNotFound e) 
@@ -30,19 +31,19 @@ public class DAOClass implements DAOInterface
 		}
 	}
 	@Override
-	public void updateAccounteeContact(String a_Id,String c_No) 
+	public void updateAccounteeContact(String accountId,String contactNo) 
 	{
 		try 
 		{
-			if(d.getHashMap().containsKey(a_Id))
+			if(d.getHashMap().containsKey(accountId))
 			{
-				System.out.println("ID Found");
-				d.getHashMap().get(a_Id).setContact(Long.parseLong(c_No));
+				System.out.println(message);
+				d.getHashMap().get(accountId).setContact(Long.parseLong(contactNo));
 				System.out.println("Contact Number is Updated...");
 			}
 			else
 			{
-				throw new IDNotFound(a_Id);
+				throw new IDNotFound();
 			}
 		} 
 		catch (IDNotFound e) 
@@ -51,19 +52,19 @@ public class DAOClass implements DAOInterface
 		}
 	}
 	@Override
-	public void updateAccounteeAddress(String a_Id, String address) 
+	public void updateAccounteeAddress(String accountId, String address) 
 	{
 		try 
 		{
-			if(d.getHashMap().containsKey(a_Id))
+			if(d.getHashMap().containsKey(accountId))
 			{
-				System.out.println("ID Found");
-				d.getHashMap().get(a_Id).setAddress(address);
+				System.out.println(message);
+				d.getHashMap().get(accountId).setAddress(address);
 				System.out.println("Address is Updated...");
 			}
 			else
 			{
-				throw new IDNotFound(a_Id);
+				throw new IDNotFound();
 			}
 		} 
 		catch (IDNotFound e) 

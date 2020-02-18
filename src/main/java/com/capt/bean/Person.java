@@ -7,12 +7,12 @@ public class Person
 	private long aadhar;
 	private String pan;
 	private long dob;
-	private boolean gender_male;	
+	private boolean gendermale;	
 	private String accountNumber;
 	private String newName;
 	private String newNum;
 	private String newAddress;
-	public Person(){;}
+	public Person(){}
 	public void setAccountNumber(String accountNumber) 
 	{
 		this.accountNumber = accountNumber;
@@ -45,7 +45,7 @@ public class Person
 	{
 		return newAddress;
 	}
-	public Person(String address, String name, long contact, long aadhar, String pan, long dob, boolean gender_male) 
+	public Person(String address, String name, long contact, long aadhar, String pan, long dob, boolean gendermale) 
 	{
 		super();
 		this.address = address;
@@ -54,13 +54,13 @@ public class Person
 		this.aadhar = aadhar;
 		this.pan = pan;
 		this.dob = dob;
-		this.gender_male = gender_male;
+		this.gendermale = gendermale;
 	}
 	@Override
 	public String toString() 
 	{
 		return "Person [address=" + address + ", name=" + name + ", contact=" + contact + ", aadhar=" + aadhar
-				+ ", pan=" + pan + ", dob=" + dob + ", gender_male=" + gender_male + "]";
+				+ ", pan=" + pan + ", dob=" + dob + ", gendermale=" + gendermale + "]";
 	}
 	public String getAddress() 
 	{
@@ -86,9 +86,9 @@ public class Person
 	{
 		return dob;
 	}
-	public boolean getIsGender_male() 
+	public boolean getIsgendermale() 
 	{
-		return gender_male;
+		return gendermale;
 	}
 	public void setAddress(String address) 
 	{
@@ -114,8 +114,8 @@ public class Person
 	{
 		this.dob = dob;
 	}
-	public void setGender_male(boolean gender_male) 
+	public void setgendermale(boolean gendermale) 
 	{
-		this.gender_male = gender_male;
+		this.gendermale = gendermale;
 	}
 }

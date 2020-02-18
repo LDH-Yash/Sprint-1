@@ -7,10 +7,11 @@ public class ServiceClass implements ServiceInterface
 	DAOClass d = new DAOClass();
 	Scanner sc = new Scanner(System.in);
 	Person p = new Person();
+	String message = "Enter the Account Number";
 	@Override
 	public void updateName()
 	{
-		System.out.println("Enter the Account Number");
+		System.out.println(message);
 		p.setAccountNumber(sc.next());
 		System.out.println("Enter Accountee's New Name");
 		p.setNewName(sc.next());
@@ -19,7 +20,7 @@ public class ServiceClass implements ServiceInterface
 	@Override
 	public void updateContact()
 	{
-		System.out.println("Enter the Account Number");
+		System.out.println(message);
 		p.setAccountNumber(sc.next());
 		System.out.println("Enter the new Contact Number");
 		p.setNewNum(sc.next());
@@ -28,7 +29,7 @@ public class ServiceClass implements ServiceInterface
 	@Override
 	public void updateAddress()
 	{
-		System.out.println("Enter the Account Number");
+		System.out.println(message);
 		p.setAccountNumber(sc.next());
 		System.out.println("Enter the New Address");
 		p.setNewAddress(sc.next());

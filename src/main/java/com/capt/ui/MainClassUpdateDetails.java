@@ -3,15 +3,16 @@ import java.util.Scanner;
 import com.capt.service.ServiceClass;
 public class MainClassUpdateDetails 
 {
-	public static void main(String[] args) 
+	static ServiceClass s = new ServiceClass();
+	static String menu;
+	static Scanner sc = new Scanner(System.in);
+	public static void switchCase()
 	{
-		ServiceClass s = new ServiceClass();
-		System.out.println("Welcome to the Account Update Menu:");
-		Scanner sc = new Scanner(System.in);
-		while(true)
+		boolean b=true;
+		while(b)
 		{
 			System.out.println("What do you want to update\n1. Customer Name\n2. Customer Contact\n3. Customer Address\n4. Show All the Data\nOr Press any key to exit...");
-			String menu = sc.next();
+			menu = sc.next();
 			switch (menu) 
 			{
 				case "1":
@@ -42,10 +43,15 @@ public class MainClassUpdateDetails
 				{
 					System.out.println("Good Bye...");
 					sc.close();
-					System.exit(0);
+					b=false;
 					break;
 				}
 			}
 		}
+	}
+	public static void main(String[] args) 
+	{
+		System.out.println("Welcome to the Account Update Menu:");
+		switchCase();
 	}
 }
