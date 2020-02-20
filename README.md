@@ -1,2 +1,2 @@
 # Pecunia
- Pecunia Bank Details Updating
+=> Pecunia Bank Details Updating
