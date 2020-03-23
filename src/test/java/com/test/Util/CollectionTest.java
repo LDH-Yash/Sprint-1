@@ -8,12 +8,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import com.capt.bean.Person;
-import com.capt.util.DummyData;
+import com.capt.util.RepositoryStorage;
 
 class CollectionTest 
 {
 	static HashMap<String, Person> hm = new HashMap<String, Person>();
-	DummyData t1 = new DummyData();
+	RepositoryStorage t1 = new RepositoryStorage();
 	public static void dummyData() 
 	{
 		Person p1 = new Person("383 Avas Vikas Bijnor", "Yash", 8979324667l, 111111111111l, "adqa1234adsa", 19981001, true);

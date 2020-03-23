@@ -3,43 +3,88 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.capt.dao.DAOClass;
+import com.capt.dao.PersonDAO;
 class DAOTesting 
 {
-	DAOClass d = new DAOClass();
+	PersonDAO d = new PersonDAO();
 	@Test
-	void test() 
+	void test1_1() 
 	{
-		assertTrue(d.updateAccounteeName("1", "Ram"));
+		System.out.print("test1, ");
+		assertFalse(d.updateAccounteeName("111111111111", ""));
 	}
 	@Test
-	void test1() 
+	void test1_2() 
 	{
-		assertTrue(d.updateAccounteeContact("1", "9457556446"));
+		System.out.print("test1, ");
+		assertFalse(d.updateAccounteeName("111111111111", "9Rakesh"));
 	}
 	@Test
-	void test2() 
+	void test1_3() 
 	{
-		assertTrue(d.updateAccounteeAddress("1", "Ram"));
+		System.out.print("test1, ");
+		assertTrue(d.updateAccounteeName("111111111111", "Rakesh"));
+	}
+	
+	@Test
+	void test2_1() 
+	{
+		System.out.print("test2, ");
+		assertFalse(d.updateAccounteeContact("111111111111", ""));
 	}
 	@Test
-	void test3() 
+	void test2_2() 
 	{
-		assertFalse(d.updateAccounteeName("1", "123"));
+		System.out.print("test2, ");
+		assertFalse(d.updateAccounteeContact("111111111111", "abcd897932"));
+	}@Test
+	void test2_3() 
+	{
+		System.out.print("test2, ");
+		assertTrue(d.updateAccounteeContact("111111111111", "9457556446"));
+	}
+	
+	@Test
+	void test3_1() 
+	{
+		System.out.print("test3, ");
+		assertFalse(d.updateAccounteeAddress("111111111111", ""));
 	}
 	@Test
-	void test4() 
+	void test3_2() 
 	{
-		assertFalse(d.updateAccounteeContact("1", "Ram"));
+		System.out.print("test3, ");
+		assertFalse(d.updateAccounteeAddress("111111111111", "$413, Name Street."));
 	}
 	@Test
-	void test5() 
+	void test3_3() 
 	{
-		assertFalse(d.updateAccounteeAddress("1", "123"));
+		System.out.print("test3, ");
+		assertTrue(d.updateAccounteeAddress("111111111111", "413, Name Street."));
 	}
+	
+	@Test
+	void test4_1() 
+	{
+		System.out.print("test1, ");
+		assertFalse(d.updateAccounteeName("", "Ram"));
+	}
+	@Test
+	void test4_2() 
+	{
+		System.out.print("test1, ");
+		assertFalse(d.updateAccounteeName("44444444", "Ram"));
+	}
+	@Test
+	void test4_3() 
+	{
+		System.out.print("test1, ");
+		assertTrue(d.updateAccounteeName("111111111111", "Ram"));
+	}
+	
 	@BeforeEach
 	void test6()
 	{
-		System.out.println("Ok, test case passed");
+		System.out.print("Checking ");
 	}
 }

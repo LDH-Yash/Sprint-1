@@ -1,6 +1,9 @@
 package com.capt.bean;
 public class Person 
 {
+	/*
+	 * declaring getter, setter, variables, to string and the constructor...
+	 */
 	private String address;
 	private String name;
 	private long contact;
